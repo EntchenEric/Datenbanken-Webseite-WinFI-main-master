@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Datenbanken</title>
+  <link rel="icon" type="image/x-icon" href="BKGlaLogo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/9e293c0a6d.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <header id="navbar">
+    <nav>
+      <ul>
+        <li><a href="#allgemein">Allgemeine Informationen</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#videos">Erklärvideos</a></li>
+        <li><a href="#aufgaben">Übungsaufgaben</a></li>
+        <li><button onclick="toggleTheme()" id="themeButton">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="allgemein" class="hidden">
+      <h2>Datenbanken - Was steckt dahinter?</h2>
+      <div class="paragraphs">
+        <p class="paragraph hidden">Datenbanken sind ein wichtiger Bestandteil von vielen Anwendungen und Systemen, die große Datenmengen
+          verwalten müssen. Microsoft Access ist ein weit verbreitetes Datenbank-Management-System, das speziell für
+          kleine bis mittelgroße Anwendungen konzipiert wurde. Es bietet eine intuitive Benutzeroberfläche und
+          umfangreiche Funktionen für die Erstellung und Verwaltung von Datenbanken.</p>
+
+        <p class="paragraph hidden">Eines der wichtigsten Konzepte bei der Erstellung von Datenbanken ist die Normalisierung. Normalisierung ist
+          der Prozess der Strukturierung von Daten in einer Datenbank, um die Datenintegrität zu gewährleisten und die
+          Redundanz zu reduzieren. In Access gibt es vier Normalformen, die nacheinander erfüllt werden müssen, um eine
+          vollständig normalisierte Datenbank zu erhalten. Diese Normalformen helfen dabei, Datenbanken effizienter und
+          wartbarer zu gestalten.</p>
+
+        <p class="paragraph hidden">Berichte sind ein weiterer wichtiger Aspekt von Datenbanken in Access. Berichte ermöglichen es, Daten in
+          einer übersichtlichen und strukturierten Form zu präsentieren. Mit Access können Berichte einfach erstellt und
+          angepasst werden, um Daten auf verschiedene Arten zu visualisieren und zu analysieren.</p>
+
+        <p class="paragraph hidden">Formulare sind ein wichtiger Bestandteil von Datenbanken in Access, da sie die Benutzeroberfläche für die
+          Eingabe und Bearbeitung von Daten bereitstellen. Mit Formularen können Benutzer schnell und einfach Daten in
+          eine Datenbank eingeben oder bearbeiten. Access bietet verschiedene Funktionen, um die Erstellung und
+          Anpassung von Formularen zu erleichtern.</p>
+
+        <p class="paragraph hidden">Abfragen sind ein weiteres wichtiges Element von Datenbanken in Access. Abfragen ermöglichen es Benutzern,
+          gezielt Daten aus einer Datenbank abzurufen, indem sie Kriterien definieren, nach denen die Daten ausgewählt
+          werden sollen. Access bietet eine Vielzahl von Funktionen, um Abfragen zu erstellen und auszuführen.</p>
+
+        <p class="paragraph hidden">Das Entity-Relationship-Modell (ERM) ist ein wichtiges Konzept in der Datenbank-Modellierung. ERM ist eine
+          grafische Darstellung von Entitäten (Dinge oder Konzepte), die in einer Datenbank enthalten sind, sowie deren
+          Beziehungen zueinander. ERM ermöglicht es, Datenbanken strukturiert zu modellieren und zu planen, bevor sie
+          implementiert werden.</p>
+
+        <p class="paragraph hidden">Insgesamt bietet Access viele Funktionen und Werkzeuge, um Datenbanken zu erstellen, zu verwalten und zu
+          analysieren. Normalisierung, Berichte, Formulare, Abfragen und ERM sind wichtige Konzepte, die bei der
+          Erstellung von Datenbanken in Access berücksichtigt werden sollten, um effiziente und wartbare Datenbanken zu
+          erstellen.</p>
+      </div>
+    </section>
+
+    <section id="quiz" class="hidden">
+      <h2>Access Quiz</h2>
+      <div>
+
+        <form id="quiz-form">
+          <div class="question hidden">
+            <!-- Frage 1 -->
+            <h3>Frage 1: Was ist eine Normalform?</h3>
+            <input type="radio" name="q1" value="a" required> a) Ein Konzept aus der Wahrscheinlichkeitstheorie.<br>
+            <input type="radio" name="q1" value="b"> b) Eine Methode zur Strukturierung von Datenbanken.<br>
+            <input type="radio" name="q1" value="c"> c) Eine Funktion in Access zur Datensicherung.<br>
+            <input type="radio" name="q1" value="d"> d) Eine Art von Tabelle in Access.<br>
+            <br>
+          </div>
+          <div class="question hidden">
+            <!-- Frage 2 -->
+            <h3>Frage 2: Was bedeutet ERM?</h3>
+            <input type="radio" name="q2" value="a" required> a) Eine Abkürzung für "Enterprise Resource
+            Management".<br>
+            <input type="radio" name="q2" value="b"> b) Eine Abkürzung für "Entity-Relationship-Modell".<br>
+            <input type="radio" name="q2" value="c"> c) Eine Abkürzung für "Electronic Resource Management".<br>
+            <input type="radio" name="q2" value="d"> d) Eine Abkürzung für "Efficient Resource Management".<br>
+            <br>
+          </div>
+          <div class="question hidden">
+            <!-- Frage 3 -->
+            <h3>Frage 3: Was sind Formulare in Access?</h3>
+            <input type="radio" name="q3" value="a" required> a) Eine Art von Bericht.<br>
+            <input type="radio" name="q3" value="b"> b) Eine Möglichkeit zur Erstellung von Abfragen.<br>
+            <input type="radio" name="q3" value="c"> c) Eine Möglichkeit zur Dateneingabe und -bearbeitung in
+            Access.<br>
+            <input type="radio" name="q3" value="d"> d) Eine Art von Tabellen in Access.<br>
+            <br>
+          </div>
+          <div class="question hidden">
+            <!-- Frage 4 -->
+            <h3>Frage 4: Was sind Abfragen in Access?</h3>
+            <input type="radio" name="q4" value="a" required> a) Eine Möglichkeit zur Dateneingabe und -bearbeitung in
+            Access.<br>
+            <input type="radio" name="q4" value="b"> b) Eine Möglichkeit zur Erstellung von Formularen.<br>
+            <input type="radio" name="q4" value="c"> c) Eine Möglichkeit zur Erstellung von Berichten.<br>
+            <input type="radio" name="q4" value="d"> d) Eine Möglichkeit zur gezielten Abfrage von Daten.<br>
+            <br>
+          </div>
+          <div class="question hidden">
+            <!-- Frage 5 -->
+            <h3>Frage 5: Was sind Berichte in Access?</h3>
+            <input type="radio" name="q5" value="a" required> a) Eine Möglichkeit zur Dateneingabe und -bearbeitung in
+            Access.<br>
+            <input type="radio" name="q5" value="b"> b) Eine Möglichkeit zur Dateneingabe und -bearbeitung .<br>
+            <input type="radio" name="q5" value="c"> c) Eine Möglichkeit zur Erstellung von Abfragen.<br>
+            <input type="radio" name="q5" value="d"> d) Eine Möglichkeit zur Visualisierung von Daten.<br>
+            <br>
+          </div>
+          <div class="question hidden">
+            <!-- Frage 6 -->
+            <h3>Frage 6: Welche Normalformen gibt es?</h3>
+            <input type="radio" name="q6" value="a" required> a) Nur die erste und zweite Normalform.<br>
+            <input type="radio" name="q6" value="b"> b) Nur die erste, zweite und dritte Normalform.<br>
+            <input type="radio" name="q6" value="c"> c) Nur die erste, zweite, dritte und vierte Normalform.<br>
+            <input type="radio" name="q6" value="d"> d) Es gibt keine Normalformen in Access.<br>
+            <br>
+          </div>
+          <div class="question hidden">
+            <!-- Frage 7 -->
+            <h3>Frage 7: Was ist eine 1:N-Beziehung in einem ERM?</h3>
+            <input type="radio" name="q7" value="a" required> a) Eine Beziehung, bei der ein Datensatz in Tabelle A zu
+            einem oder mehreren Datensätzen in Tabelle B passt.<br>
+            <input type="radio" name="q7" value="b"> b) Eine Beziehung, bei der ein Datensatz in Tabelle A zu genau
+            einem Datensatz in Tabelle B passt.<br>
+            <input type="radio" name="q7" value="c"> c) Eine Beziehung, bei der ein Datensatz in Tabelle A zu einem oder
+            keinem Datensatz in Tabelle B passt.<br>
+            <input type="radio" name="q7" value="d"> d) Eine Beziehung, bei der Tabelle A und Tabelle B exakt die
+            gleichen Spalten haben.<br>
+            <br>
+          </div>
+          <div class="question hidden">
+            <!-- Frage 8 -->
+            <h3>Frage 8: Welche Dateiendung wird für das aktuelle Access-Datenbanken verwendet?</h3>
+            <input type="radio" name="q8" value="a" required> a) .accdb
+            Parameter eingeben muss.<br>
+            <input type="radio" name="q8" value="b"> b) .xlsx
+            ausgeführt wird.<br>
+            <input type="radio" name="q8" value="c"> c) .docx
+            muss.<br>
+            <input type="radio" name="q8" value="d"> d) .accex
+            anzeigt.<br>
+            <br>
+          </div>
+          <div class="question hidden">
+            <!-- Frage 9 -->
+            <h3>Frage 9: Was ist ein Primärschlüssel in Access?</h3>
+            <input type="radio" name="q9" value="a" required> a) Ein Wert, der verwendet wird, um Daten aus mehreren Tabellen zu kombinieren.<br>
+            <input type="radio" name="q9" value="b"> b) Ein Wert, der verwendet wird, um Daten in Access zu sortiere.<br>
+            <input type="radio" name="q9" value="c"> c) Ein eindeutiger Wert, der jeden Datensatz in einer Tabelle identifiziert.<br>
+            <input type="radio" name="q9" value="d"> d) Ein Wert, der verwendet wird, um Daten zu filtern. <br>
+            <br>
+          </div>
+          <div class="question hidden">
+            <!-- Frage 10 -->
+            <h3>Frage 10: Wie kann man in Access Daten aus einer Tabelle löschen?
+            </h3>
+            <input type="radio" name="q10" value="a" required> a) Mit einem Rechtsklick auf den Datensatz und Auswahl von "Löschen".<br>
+            <input type="radio" name="q10" value="b"> b) Mit dem Datensatz-Assistenten.<br>
+            <input type="radio" name="q10" value="c"> c) Mit dem Bericht-Assistenten.<br>
+            <input type="radio" name="q10" value="d"> d)  Über das Menü "Bearbeiten" -> "Löschen".<br>
+            <br>
+          </div>
+          <button type="submit" id="submit-button" class="question hidden">Antworten auswerten</button>
+        </form>
+
+        <div id="result"></div>
+</body>
+
+</html>
+
+
+</div>
+</section>
+
+<section id="videos" class="hidden">
+  <h2>Videos</h2>
+  <div id="videoplayer" class="hidden">
+    <div id="Titel">
+      <p id="titlename"></p>
+    </div>
+    <div id="Content" class="hidden">
+      <video id="video">
+        <source src="video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div id="videocontrolls" >
+      <button id="previous-vid" onclick="previousVideo()" class="hidden videocontrols"><i class="fa-solid fa-backward"></i></button>
+      <button id="play-pause" onclick="togglePause()" class="hidden videocontrols"><i class="fa-solid fa-play"></i></button>
+      <button id="next-vid" onclick="nextVideo()" class="hidden videocontrols"><i class="fa-solid fa-forward"></i></button>
+      <div id="VolumeChanger" class="hidden videocontrols">
+        <button id="volume"><i class="fa-solid fa-volume-high"></i></button>
+        <input type="range" id="volumeBar" min="0" max="100" value="100" step="0.1">
+      </div>
+      <button id="fullscreen" class="hidden videocontrols"><i class="fa-solid fa-expand"></i></button>
+    </div>
+    <input type="range" id="progressbar" min="0" max="100" value="1" step="0.1" class="hidden">
+    <p id="transcript"class="hidden"></p>
+  </div>
+</section>
+
+<section id="aufgaben" class="hidden">
+  <h2>Übungsaufgaben</h2>
+  <p class="hidden">
+    Im folgenden finden Sie einige Übungsaufgaben. Alle Übunbgsaufgaben basieren auf eine von uns erstellte Datenbank.
+    Um diese herunterzuladen, klicken sie auf den knopf "Datenbank Herunterladen".<br>Zu jeder Aufgabe gibt es Tipps und
+    Lösungen. Wenn Sie hilfe benötigen, klicken sie auf den <i class="fa-solid fa-info"></i>-Knopf. Sie können sich
+    selbst Kontrollieren, indem Sie die Lösungen in der Datenbank anschauen.
+  </p>
+  <button id="DownloadButton"><a href="flywerke.accdb" download id="DownloadButtonLink" class="hidden">Herunterladen</a></button>
+  <div id="taskholder" class="hidden">
+    <h3 id="TaskTitle">
+
+    </h3>
+    <img id="TaskImage">
+
+    <p id="TaskText">
+
+    </p>
+    <div id="TaskControllBar">
+      <button id="TaskBefore" onclick="BeforeTask()"><i class="fa-solid fa-caret-left"></i></button>
+      <button id="Tipp" onclick="tipp()"><i class="fa-solid fa-info"></i></button>
+      <button id="NextTask" onclick="NextTask()"><i class="fa-solid fa-caret-right"></i></button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="Footer">
+  <div>
+    Erstellt von: Eric Seidel, Maurice Monath und Paul Kretschmann
+  </div>
+  <div>
+    Erstellt für das Berufskolleg Gladbeck.
+  </div>
+  <div>
+    <a href="https://berufskolleg-gladbeck.de/impressum/">Impressum</a>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+
+</html>

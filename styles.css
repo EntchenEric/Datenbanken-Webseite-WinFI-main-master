@@ -84,7 +84,21 @@
   --navtext-color: #ffffff;
 }
 
+.PopUp{
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
 
+.PopUp button{
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border-radius: 50px;
+  scale: 1.7;
+}
+
+.PopUp button:hover{
+  scale: 1.8;
+}
 
 body {
   font-family: "Merriweather";
@@ -134,6 +148,8 @@ section {
   min-height: 100vh;
   margin-bottom: 20px;
 }
+
+
 
 .hidden{
   opacity: 0;
@@ -561,6 +577,7 @@ input[type=range]::-webkit-slider-runnable-track {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
   text-decoration: none;
   height: 50px;
   width: 150px;
@@ -582,4 +599,11 @@ input[type=range]::-webkit-slider-runnable-track {
 a{
   text-decoration: none;
   color: var(--text-color);
+}
+#ERDPlus div img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 10%;
 }

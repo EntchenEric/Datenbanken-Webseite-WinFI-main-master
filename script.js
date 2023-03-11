@@ -7,6 +7,29 @@ function toggleMenu() {
   }
 }
 
+// Überprüfen, ob der Benutzer das Cookie-Popup bereits bestätigt hat
+  // Popup-Fenster erstellen
+  const popup = document.createElement('div');
+  popup.classList.add("PopUp")
+  popup.style.position = 'fixed';
+  popup.style.bottom = '0';
+  popup.style.left = '0';
+  popup.style.right = '0';
+  popup.style.padding = '10px';
+  popup.style.textAlign = 'center';
+  popup.innerHTML = `
+    <p>Wir verwenden Cookies, um sicherzustellen, dass wir Ihnen die beste Erfahrung auf unserer Website bieten. Bitte bestätigen Sie, dass Sie damit einverstanden sind, indem Sie auf "Zustimmen" klicken.</p>
+    <button id="cookie-consent">Zustimmen</button>
+  `;
+  document.body.appendChild(popup);
+
+  // Popup-Fenster-Verhalten hinzufügen
+  const button = document.getElementById('cookie-consent');
+  button.addEventListener('click', () => {
+    localStorage.setItem('cookie_consent', 'true');
+    popup.style.display = 'none';
+  });
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if(entry.isIntersecting){
@@ -108,17 +131,26 @@ style.innerHTML = `
 document.head.appendChild(style);
 
 
-// Speichert die aktuellen Themes
 var themes = ["dark", "light", "blue", "high-contrast", "pink", "red", "sky"];
-var currentTheme = 0;
+var currentTheme = getCookieValue("theme") || 0;
+
 const themeButton = document.getElementById("themeButton");
 
-// Ändert das aktuelle Theme
+// Setzt das aktuelle Theme
+setTheme();
+
+// Ändert das aktuelle Theme und speichert es in Cookies
 function toggleTheme() {
   // Wechselt zum nächsten Theme
   currentTheme = (currentTheme + 1) % themes.length;
 
-  // Ändert das HTML-Element "root", um das Theme anzuwenden
+  // Setzt das neue Theme und speichert es in Cookies
+  setTheme();
+  setCookieValue("theme", currentTheme);
+}
+
+// Ändert das HTML-Element "root", um das aktuelle Theme anzuwenden
+function setTheme() {
   document.documentElement.className = themes[currentTheme];
   switch (currentTheme) {
     case 0:
@@ -142,13 +174,34 @@ function toggleTheme() {
     case 6:
       themeButton.innerHTML = '🥶'
       break;
-
   }
 }
 
+// Funktion, um den Wert eines Cookies zu erhalten
+function getCookieValue(cookieName) {
+  const cookies = document.cookie.split(";");
+
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].trim();
+    if (cookie.startsWith(`${cookieName}=`)) {
+      return parseInt(decodeURIComponent(cookie.substring(`${cookieName}=`.length, cookie.length)));
+    }
+  }
+  return null;
+}
+
+// Funktion, um den Wert eines Cookies zu setzen
+function setCookieValue(cookieName, value) {
+  const date = new Date();
+  date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000)); // Ablaufdatum des Cookies in 365 Tagen
+  const expires = `expires=${date.toUTCString()}`;
+  document.cookie = `${cookieName}=${encodeURIComponent(value)}; ${expires}; path=/`;
+}
+
+
 
 videos = [
-  ["Tabellen erstellen", "Erklärvideo1_alternative.mp4", "Um Daten in eine Datenbank einzutragen, müssen sie ganz einfach oben Links auf Ansicht und in die in die Entwurfsansicht wechseln. Hier können sie in der Spalte Feldname unter ID in die einzelnen Zellen klicken und sie Beschriften. In Unserem Beispiel erstellen wir eine neue Spalte mit einer Liste aus Namen. Dazu wählen wir den Feldatentyp „Kurzer Text“. Um nun unter der neu erstellten Spalte schreiben zu können gehen wir zurück in die Datenblatt Ansicht und können nun  in der Spalte Namen unsere Daten eingeben . Das Feld ID wird automatisch ein Wert zugewiesen"],
+  ["Tabellen erstellen", "Erklärvideo1.mp4", "Um Daten in eine Datenbank einzutragen, müssen sie ganz einfach oben Links auf Ansicht und in die in die Entwurfsansicht wechseln. Hier können sie in der Spalte Feldname unter ID in die einzelnen Zellen klicken und sie Beschriften. In Unserem Beispiel erstellen wir eine neue Spalte mit einer Liste aus Namen. Dazu wählen wir den Feldatentyp „Kurzer Text“. Um nun unter der neu erstellten Spalte schreiben zu können gehen wir zurück in die Datenblatt Ansicht und können nun  in der Spalte Namen unsere Daten eingeben . Das Feld ID wird automatisch ein Wert zugewiesen"],
   ["Primärschlüssel", "Erklärvideo2.mp4", "Ein Primärschlüssel ist ein essenzieller Bestandteil von Datenbanken. Ein Primärschlüssel muss immer einzigartig sein. Dies ist durch den Autowert einfach möglich. Immer wenn sie in Access eine neue Tabelle erstellen, wird automatisch das Feld ID mit dem Felddatentyp Autowert generiert. Wie zum Beispiel das jeder Kunde eine Einzigartige kundenID bekommt."],
   ["Felddatentypen", "Erklärvideo3.mp4", "In Access gibt es insgesamt 14 Verschiedene Felddatentypen. Die Wichtigsten sind der Kurze bzw. Lange Text, die Zahl, das Datum/Uhrzeit und der Autowert. Der Kurzen und Lange Text speichern. Die Namen der Datentypen sind ziemlich selbsterklärend. Der Kurze und Lange Text speichert Text, die Zahl speichert Zahlen, Datum/Uhrzeit speichert ein Datum und eine Uhrzeit. Der Autowert zählt automatisch von 1 an nach oben. Dies ist für den Primärschlüssel wichtig."],
   ["Abfragen", "Erklärvideo6.mp4", "Wir als Unternehmen wollen eine Abfrage erstellen, wo wir Alle Kunden aus München auflisten. Diese abfrage wird erstellt in dem wir auf „Erstellen-Abfrageentwurf klicken. danach gehen wir auf die rechte Seite und wählen die Tabelle Kunden. In diesem Fenster wählen wir jetzt unser Kriterium und die Sachen, die wir aufgelistet haben wollen, also Name und Nachname. Damit wir nun alle Kunden in München finden fügen wir in der Spalte Ort das Kriterium München hinzu. Nun gehen wir oben links auf ausführen und wie sie sehen, sehen sie nun eine Liste von Kunden aus München"],
